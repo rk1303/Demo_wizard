@@ -1,16 +1,27 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HeroFormComponent } from './hero-form/hero-form.component';
+import { WizardComponent } from './wizard/wizard.component';
+import { StepTwoComponent } from './step-two/step-two.component';
+import { StepThreeComponent } from './step-three/step-three.component';
+import { StepFourComponent } from './step-four/step-four.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeroFormComponent,
+    WizardComponent,
+    StepTwoComponent,
+    StepThreeComponent,
+    StepFourComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    FormsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

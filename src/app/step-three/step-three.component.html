@@ -1,0 +1,16 @@
+<div class="form-group">
+    <label for="phone">Phone</label>
+    <input type="text" class="form-control" id="phone" required [(ngModel)]="user_phone" name="phone"
+        #phone="ngModel">
+    <div [hidden]="phone.valid || phone.pristine" class="alert alert-danger">
+        10Digit is Required.
+    </div>    
+</div>
+<div class="form-group">
+    <label for="organization">Organization</label>
+    <input type="text" class="form-control" id="organization" required [(ngModel)]="user_organization" name="organization"
+        #organization="ngModel">
+    <div [hidden]="organization.valid || organization.pristine" class="alert alert-danger">
+        Enter Organization.
+    </div>    
+</div>
