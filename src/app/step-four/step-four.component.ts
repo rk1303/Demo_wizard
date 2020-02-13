@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+// import { CaptchaComponent } from 'angular-captcha';
+
+import { MainService } from '../services/main-service.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-step-four',
@@ -7,9 +11,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StepFourComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
+  userDetails;
+  aFormGroup: FormGroup;
+  constructor(private service: MainService, private formBuilder: FormBuilder) {
+    this.userDetails = service.getUserDetail();
   }
-
+  ngOnInit(): void {
+    this.aFormGroup = this.formBuilder.group({
+      recaptcha: ['', Validators.required]
+    });
+  }
+  success(){
+    this.service.setUserDetails('captcha', true);
+  }
 }

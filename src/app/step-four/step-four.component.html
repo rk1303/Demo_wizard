@@ -1,1 +1,18 @@
-<p>step-four works!</p>
+<section class="container">
+    <section class="details">
+        <section>Name: <span>{{userDetails.name}}</span></section>
+        <section> Email Id:<span>{{userDetails.email}}</span></section>
+        <section> Message:<span>{{userDetails.msg}}</span></section>
+        <section>Organisation:<span>{{userDetails.org}}</span></section>
+        <section>Phone: <span>{{userDetails.phone}}</span></section>
+    </section>
+    <section class="captcha">
+        <section>
+            <form [formGroup]="aFormGroup">
+                <ngx-recaptcha2 #captchaElem siteKey="6LfNFtgUAAAAAKBoncj6V4bKCa18GwndczVeYmYP" useGlobalDomain="false"
+                    size="Normal" hl="en" theme="	Light" type="Image" formControlName="recaptcha" (success)="success()">
+                </ngx-recaptcha2>
+            </form>
+        </section>
+    </section>
+</section>

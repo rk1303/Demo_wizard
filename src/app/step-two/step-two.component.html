@@ -1,4 +1,8 @@
 <div class="md-form">
     <label for="form7">Message</label>
-    <textarea type="text" id="form7" class="md-textarea form-control" mdbInput></textarea>
+    <textarea type="text" class="md-textarea form-control" id="msg" required [(ngModel)]="userDetails.msg" name="msg"
+        #msg="ngModel" maxlength="50"></textarea>
+    <div [hidden]="msg.valid || msg.pristine" class="alert alert-danger">
+        Message is Required.
+    </div>
 </div>

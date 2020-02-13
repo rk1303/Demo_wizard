@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-
+import { MainService } from '../services/main-service.service';
 @Component({
   selector: 'app-step-three',
   templateUrl: './step-three.component.html',
   styleUrls: ['./step-three.component.css']
 })
-export class StepThreeComponent implements OnInit {
-  user_organization:string="Sny";
-  user_phone:number=43245234;
-  constructor() { }
+export class StepThreeComponent {
 
-  ngOnInit() {
+  userDetails;
+  constructor(private service: MainService) {
+    this.userDetails = service.getUserDetail();
+
   }
-
+  
 }

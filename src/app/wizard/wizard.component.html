@@ -1,17 +1,17 @@
 <section class="container">
-    <h2>Welcome to User Registration Wizard</h2>
+    <h2>Welcome to User Regisration Wizard</h2>
     <section class="step_indicator">
         <span>Step {{crStep}} of 4</span>
     </section>
     <section class="body-content">
-        <app-hero-form *ngIf="crStep==1"></app-hero-form>
+        <app-step-one *ngIf="crStep==1"></app-step-one>
         <app-step-two *ngIf="crStep==2"></app-step-two>
         <app-step-three *ngIf="crStep==3"></app-step-three>
         <app-step-four *ngIf="crStep==4"></app-step-four>
     </section>
     <section class="actions">
-        <button  class="btn btn-success"  *ngIf="crStep > 1" (click)="back()">Back</button>
-        <button  class="btn btn-success"  [disabled]="isNextDisabled" *ngIf="crStep <4" (click)="next()">Next</button>
-        <button  type="submit" class="btn btn-success" [disabled]="!isSubmitDisabled" *ngIf="crStep==4" (click)="submit()">Submit</button>
+            <button  class="btn btn-success"  *ngIf="crStep > 1" (click)="back()">Back</button>
+            <button  class="btn btn-success" *ngIf="crStep < 4" (click)="next()">Next</button>
+            <button type="submit" class="btn btn-success" *ngIf="crStep==4" (click)="submit()">Submit</button>
     </section>
 </section>

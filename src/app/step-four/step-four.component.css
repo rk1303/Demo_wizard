@@ -1,0 +1,21 @@
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:20px;
+}
+.details{
+    border-right: 2px dotted grey;
+    padding-right: 50px;
+}
+.details section{
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.details span{
+    margin-left: 10px;
+    font-size: 14px;
+    font-weight: 400;
+}
